@@ -285,50 +285,7 @@ class TensorProduct(Expr):
 
 
 def tensor_product_simp_Mul(e):
-    """Simplify a Mul with tensor products.
-
-    .. deprecated:: 1.14.
-        The transformations applied by this function are not done automatically
-        when tensor products are combined.
-
-    Originally, the main use of this function is to simplify a ``Mul`` of
-    ``TensorProduct``s to a ``TensorProduct`` of ``Muls``. It currently only
-    works for relatively simple cases where the initial ``Mul`` only has
-    scalars and raw ``TensorProduct``s, not ``Add``, ``Pow``, or ``Commutator``s
-    of ``TensorProduct``s.
-
-    Parameters
-    ==========
-
-    e : Expr
-        A ``Mul`` of ``TensorProduct``s to be simplified.
-
-    Returns
-    =======
-
-    e : Expr
-        A ``TensorProduct`` of ``Mul``s.
-
-    Examples
-    ========
-
-    This is an example of the type of simplification that this function
-    performs::
-
-        >>> from sympy.physics.quantum.tensorproduct import \
-                    tensor_product_simp_Mul, TensorProduct
-        >>> from sympy import Symbol
-        >>> A = Symbol('A', commutative=False)
-        >>> B = Symbol('B', commutative=False)
-        >>> C = Symbol('C', commutative=False)
-        >>> D = Symbol('D', commutative=False)
-        >>> e = TensorProduct(A, B)*TensorProduct(C, D)
-        >>> e
-        AxB*CxD
-        >>> tensor_product_simp_Mul(e)
-        (A*C)x(B*D)
-
-    """
+    
     sympy_deprecation_warning(
         """
         tensor_product_simp_Mul has been deprecated. The transformations
@@ -339,7 +296,6 @@ def tensor_product_simp_Mul(e):
         active_deprecations_target='deprecated-tensorproduct-simp'
     )
     return e
-
 
 def tensor_product_simp_Pow(e):
     """Evaluates ``Pow`` expressions whose base is ``TensorProduct``
@@ -365,7 +321,10 @@ def tensor_product_simp(e, **hints):
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 <<<<<<< HEAD
@@ -373,6 +332,9 @@ def tensor_product_simp(e, **hints):
     It currently only works for relatively simple cases were the products have
 =======
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -384,6 +346,10 @@ def tensor_product_simp(e, **hints):
     It only worked for relatively simple cases where the products have
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> ab159eec4dfcc9ac448c35ee986c6b9cefbca2d5
+>>>>>>> Stashed changes
 =======
 >>>>>>> ab159eec4dfcc9ac448c35ee986c6b9cefbca2d5
 >>>>>>> Stashed changes
